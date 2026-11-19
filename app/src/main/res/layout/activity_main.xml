@@ -1,19 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:id="@+id/main" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
+    android:background="@color/screen_background" android:padding="20dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="STUDENTLEAF · GROW TOGETHER" android:textSize="12sp"
+        android:letterSpacing="0.12" android:textStyle="bold"
+        android:textColor="@color/primary" android:layout_marginBottom="12dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="22dp"
+        android:background="@drawable/bg_header">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="GÓC HỌC TẬP" android:textSize="11sp" android:textStyle="bold"
+            android:textColor="#4E5C22" android:background="@drawable/bg_badge"
+            android:paddingHorizontal="12dp" android:paddingVertical="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="14dp" android:text="Quản lý sinh viên"
+            android:textSize="26sp" android:textStyle="bold" android:textColor="@color/white" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Mỗi sinh viên, một hành trình phát triển."
+            android:textSize="14sp" android:textColor="#D9F5E6" />
+        <TextView android:id="@+id/tvStats" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="18dp"
+            android:text="0 sinh viên  •  GPA TB 0.00" android:textSize="16sp"
+            android:textStyle="bold" android:textColor="@color/cream" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" android:hint="Tìm tên, mã sinh viên hoặc lớp"
+        app:boxBackgroundColor="@color/white" app:endIconMode="clear_text"
+        app:boxCornerRadiusTopStart="16dp" app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp" app:boxCornerRadiusBottomEnd="16dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtSearch" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:inputType="text"
+            android:maxLines="1" android:textSize="14sp" android:imeOptions="actionDone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="18dp" android:layout_marginBottom="8dp"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Danh sách sinh viên"
+            android:textSize="18sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+        <TextView android:id="@+id/tvResultCount" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="0 kết quả"
+            android:textSize="12sp" android:textColor="@color/text_secondary" />
+    </LinearLayout>
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvStudents"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:clipToPadding="false" android:paddingBottom="10dp" />
+        <TextView android:id="@+id/tvEmpty" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:gravity="center"
+            android:padding="20dp" android:text="Chưa có sinh viên"
+            android:textSize="16sp" android:lineSpacingExtra="6dp"
+            android:textColor="@color/text_secondary" android:visibility="gone" />
+        <ProgressBar android:id="@+id/progress" android:layout_width="40dp"
+            android:layout_height="40dp" android:layout_gravity="center" />
+    </FrameLayout>
+
+    <com.google.android.material.button.MaterialButton android:id="@+id/btnAdd"
+        android:layout_width="match_parent" android:layout_height="60dp"
+        android:text="+  Thêm sinh viên" android:textAllCaps="false"
+        android:textSize="16sp" android:textStyle="bold" android:textColor="@color/white"
+        app:cornerRadius="18dp" app:backgroundTint="@color/primary" />
+</LinearLayout>
