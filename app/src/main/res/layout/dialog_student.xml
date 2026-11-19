@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Cùng lưu giữ thông tin thật gọn gàng."
+            android:textColor="@color/text_secondary" android:layout_marginBottom="14dp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCode" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:hint="Mã sinh viên"
+            app:errorEnabled="true" app:helperText="VD: 2415053122347 hoặc SV001">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtCode" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textCapCharacters"
+                android:maxLength="15" android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilName" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:hint="Họ và tên"
+            app:errorEnabled="true" app:helperText="Nhập họ tên có dấu">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtName" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textPersonName|textCapWords"
+                android:maxLength="60" android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilClass" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:hint="Lớp"
+            app:errorEnabled="true" app:helperText="VD: 24CTT1">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtClass" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textCapCharacters"
+                android:maxLength="20" android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilGpa" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:hint="Điểm GPA"
+            app:errorEnabled="true" app:helperText="Thang điểm 4 · VD: 3.65">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtGpa" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="numberDecimal"
+                android:maxLength="6" android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</ScrollView>
